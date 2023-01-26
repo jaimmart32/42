@@ -6,7 +6,7 @@
 /*   By: jaimmart <jaimmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 17:34:27 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/01/23 18:12:53 by jaimmart         ###   ########.fr       */
+/*   Updated: 2023/01/26 11:55:49 by jaimmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,17 @@
  TO GET POSIBLE COMAND_PATHS*/
 char	*find_path(char **envp)
 {
-	while (strncmp("PATH", *envp, 4))
+	int	index;
+
+	index = 0;
+	while (envp[index])
+	{
+		if (strncmp("PATH", *envp, 4) == 0)
+			break ;
 		envp++;
+	}
+	if (envp[index] == NULL)
+		return (NULL);
 	return (*envp + 5);
 }
 

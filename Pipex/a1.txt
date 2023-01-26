@@ -2,3 +2,4 @@ vamos a trasladar este input en un output y mandarlo a otro archivo
 añado una linea y las contamos Hello
 hay que emular este comportamiento pero en C y con un Makefile y la ayuda de mis librerias
 Hello Hello
+Hello
