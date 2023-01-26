@@ -6,12 +6,15 @@
 /*   By: jaimmart <jaimmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 17:34:27 by jaimmart          #+#    #+#             */
-/*   Updated: 2022/12/14 16:31:42 by jaimmart         ###   ########.fr       */
+/*   Updated: 2023/01/23 18:12:53 by jaimmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-
+/*find_path() returns a pointer to the string PATH in the "array of
+ strings" **envp,where PATH= begins, + 5 positions in the string of path because
+ we want to be after PATH= . AFTER WE WILL SPLIT THIS STRING WITH SEPARATOR ':' 
+ TO GET POSIBLE COMAND_PATHS*/
 char	*find_path(char **envp)
 {
 	while (strncmp("PATH", *envp, 4))
@@ -19,11 +22,12 @@ char	*find_path(char **envp)
 	return (*envp + 5);
 }
 
-void	close_pipes(t_pipex *pipex)
+void	close_pipe(t_pipex *pipex)
 {
 	close(pipex->tube[0]);
 	close(pipex->tube[1]);
 }
+/*Protect fork() and execve()!??*/
 
 int	main(int argc, char **argv, char **envp)
 {
@@ -47,7 +51,7 @@ int	main(int argc, char **argv, char **envp)
 	pipex.pid2 = fork();
 	if (pipex.pid2 == 0)
 		second_child(pipex, argv, envp);
-	close_pipes(&pipex);
+	close_pipe(&pipex);
 	waitpid(pipex.pid1, NULL, 0);
 	waitpid(pipex.pid2, NULL, 0);
 	parent_free(&pipex);

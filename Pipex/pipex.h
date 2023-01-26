@@ -6,7 +6,7 @@
 /*   By: jaimmart <jaimmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:42:09 by jaimmart          #+#    #+#             */
-/*   Updated: 2022/12/14 15:37:37 by jaimmart         ###   ########.fr       */
+/*   Updated: 2023/01/18 11:43:29 by jaimmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,13 @@
 /*perror*/
 # include <stdio.h>
 
+# define STDIN 0
+# define STDOUT 1
+# define STDERR 2
+
 # define ERR_INFILE "Infile"
 # define ERR_OUTFILE "Outfile"
-# define ERR_INPUT "Invalid number off arguments.\n"
+# define ERR_INPUT "Invalid number of arguments.\n"
 # define ERR_PIPE "Pipe"
 # define ERR_CMD "Command not found"
 
