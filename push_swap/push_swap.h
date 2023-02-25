@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:48:55 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/25 14:27:26 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/02/25 16:43:37 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft/libft.h"
 #include <stdlib.h>
 
-// Node or Stack
+// Node
 typedef struct s_list
 {
 	int				value;

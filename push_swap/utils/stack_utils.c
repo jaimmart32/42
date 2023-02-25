@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaimmart <jaimmart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:03:20 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/09 12:43:05 by jaimmart         ###   ########.fr       */
+/*   Updated: 2023/02/25 16:38:45 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+/*Checks if a given stack is sorted in ascending order.*/
 int	is_sorted(t_list **stack)
 {
 	t_list	*head;
@@ -26,6 +27,8 @@ int	is_sorted(t_list **stack)
 	return (1);
 }
 
+/*Given an index in the stack, returns the distance (number of steps) required 
+to move the element at that index to the top of the stack.*/
 int	get_distance(t_list **stack, int index)
 {
 	t_list	*head;
@@ -43,6 +46,10 @@ int	get_distance(t_list **stack, int index)
 	return (distance);
 }
 
+/*Given a distance, moves the element at the specified distance to the top of 
+the stack. The function uses the ra and rra functions to achieve this, 
+depending on whether the distance is closer to the top or the bottom of the 
+stack.*/
 void	make_top(t_list **stack, int distance)
 {
 	t_list	*head;
@@ -64,6 +71,7 @@ void	make_top(t_list **stack, int distance)
 	}
 }
 
+/*Prints stack.*/
 void	print_list(t_list *head)
 {
 	t_list	*tmp;

@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaimmart <jaimmart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:45:02 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/09 12:52:55 by jaimmart         ###   ########.fr       */
+/*   Updated: 2023/02/25 16:32:37 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+/*get_next_min() finds the next smallest value in the list that hasn't been 
+assigned an index yet.*/
 static t_list	*get_next_min(t_list **stack)
 {
 	t_list	*head;
@@ -36,6 +38,8 @@ static t_list	*get_next_min(t_list **stack)
 	return (min);
 }
 
+/*index_stack() takes a pointer to a linked list of integers stack and 
+assigns an index to each node of the list. */
 void	index_stack(t_list **stack)
 {
 	t_list	*head;

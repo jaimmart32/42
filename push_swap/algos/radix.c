@@ -6,22 +6,22 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:12:58 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/22 18:14:44 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/02/25 16:00:27 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-/*La función get_max_bits() recorre la pila stack y encuentra el valor máximo 
-dentro de ella (a través de la comparación del índice de cada elemento con el 
-valor máximo actual) y luego determina el número de bits necesarios para 
-representar el valor máximo en binario. Esto se logra mediante el desplazamiento
-de bits(>>) hacia la derecha del valor máximo en un bucle hasta que el valor 
-resultante se convierte en cero, lo que indica que se han desplazado todos los 
-bits del valor original.
+/*The get_max_bits() function walks through the stack and finds the maximum 
+value within it (through the comparison of the index of each element with the
+current maximum value) and then determines the number of bits needed to
+represent the maximum value in binary. This is accomplished by moving
+of bits(>>) to the right of the maximum value in a loop until the value
+resultant becomes zero, indicating that all the values ​​have been shifted.
+bits of the original value.
 
-La función devuelve el número de veces 
-que se realizó el desplazamiento, que es igual al número de bits necesarios 
-para representar el valor máximo. */
+The function returns the number of times
+that the shift was performed, which is equal to the number of bits needed
+to represent the maximum value.*/
 static int	get_max_bits(t_list **stack)
 {
 	t_list	*head;
@@ -42,21 +42,21 @@ static int	get_max_bits(t_list **stack)
 	return (max_bits);
 }
 
-/*El resultado de get_max_bits() se utiliza en la función radix_sort() para 
-determinar el número de iteraciones necesarias para clasificar correctamente
-los elementos de la pila.
+/*The result of get_max_bits() is used in the radix_sort() function to
+determine the number of iterations needed to classify correctly
+the elements of the stack.
 
-radix_sort() simplifica los numeros del stack en un index de 0 a stack_size
-los transforma a base 2(no hay 10 boxes hay 2 stacks), y despues aplica el 
-algoritmo de ordenamiento radix sort MSD (ordenación por bits más 
-significativos) Los elementos cuyo bit actual es 1 se dejan en stack_a, y 
-los que tienen un 0 en el bit actual se mueven a stack_b. Esto se hace 
-llamando a las funciones ra() y pb(), respectivamente.
+radix_sort() simplifies stack numbers at an index from 0 to stack_size
+transforms them to base 2 (there are not 10 boxes, there are 2 stacks), 
+and then applies the radix sort MSD sorting algorithm. Elements whose 
+current bit is 1 are left in stack_a, and those with a 0 in the current 
+bit are moved to stack_b. This is done calling the functions ra() and pb()
+, respectively.
 
-Una vez que se ha recorrido toda la pila stack_a, se transfiere el 
-contenido de stack_b de vuelta a stack_a en orden inverso, utilizando la 
-función pa. Después de que se han completado todas las iteraciones del 
-bucle, stack_a contendrá los elementos clasificados en orden ascendente.*/
+Once the entire stack_a has been traversed, the
+contents of stack_b back to stack_a in reverse order, using the
+pa() function. After all iterations of the
+loop, stack_a will contain the items sorted in ascending order.*/
 void	radix_sort(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*head_a;

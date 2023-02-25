@@ -6,13 +6,14 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:11:00 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/25 14:27:54 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/02/25 16:42:18 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	initStack(t_list **stack, int argc, char **argv)
+/*Initialize the stack with the input arguments.*/
+static void	init_stack(t_list **stack, int argc, char **argv)
 {
 	t_list	*new;
 	char	**args;
@@ -37,6 +38,7 @@ static void	initStack(t_list **stack, int argc, char **argv)
 		ft_free(args);
 }
 
+/*Sort depending on the size of the stack to order for efficiency.*/
 static void	sort_stack(t_list **stack_a, t_list **stack_b)
 {
 	if (ft_lstsize(*stack_a) <= 5)
@@ -57,7 +59,7 @@ int	main(int argc, char **argv)
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
-	initStack(stack_a, argc, argv);
+	init_stack(stack_a, argc, argv);
 	if (is_sorted(stack_a))
 	{
 		free_stack(stack_a);

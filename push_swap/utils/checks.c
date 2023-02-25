@@ -6,12 +6,13 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:20:06 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/25 14:20:29 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/02/25 16:17:39 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+/*Checks that the argument is not a duplicate*/
 static int	ft_contains(int num, char **argv, int i)
 {
 	i++;
@@ -24,6 +25,7 @@ static int	ft_contains(int num, char **argv, int i)
 	return (0);
 }
 
+/*Checks that the arguments are valid integers.*/
 static int	ft_isnum(char *num)
 {
 	int	i;
@@ -40,6 +42,12 @@ static int	ft_isnum(char *num)
 	return (1);
 }
 
+/*Checks if argc is equal to 2, in which case it splits argv[1] into separate 
+strings based on the space character using the ft_split function. Otherwise, 
+it assumes that the arguments are already separated into separate strings 
+in argv.
+If argc is equal to 2, the function frees the array of strings created by 
+ft_split.*/
 void	check_args(int argc, char **argv)
 {
 	int		i;

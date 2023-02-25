@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaimmart <jaimmart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:13:14 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/14 21:13:52 by jaimmart         ###   ########.fr       */
+/*   Updated: 2023/02/25 16:08:26 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+/*get_min() is a helper function that returns the minimum index value in the 
+stack, excluding a specified value.*/
 static int	get_min(t_list **stack, int val)
 {
 	t_list	*head;
@@ -28,6 +30,8 @@ static int	get_min(t_list **stack, int val)
 	return (min);
 }
 
+/*sort_3() finds the minimum and next minimum index values in the stack, then 
+applies a specific set of operations based on the positions of those values.*/
 static void	sort_3(t_list **stack_a)
 {
 	t_list	*head;
@@ -64,6 +68,10 @@ static void	sort_3(t_list **stack_a)
 	}
 }
 
+/*sort_4() finds the minimum index value in the stack, then determines the 
+distance between that value and the top of the stack. It then applies a 
+specific set of operations based on the distance and the positions of the 
+other values in the stack.*/
 static void	sort_4(t_list **stack_a, t_list **stack_b)
 {
 	int	distance;
@@ -87,6 +95,8 @@ static void	sort_4(t_list **stack_a, t_list **stack_b)
 	pa(stack_a, stack_b);
 }
 
+/*similar to sort_4, but includes an additional set of operations to sort 
+the second stack (stack_b).*/
 void	sort_5(t_list **stack_a, t_list **stack_b)
 {
 	int	distance;
@@ -113,6 +123,8 @@ void	sort_5(t_list **stack_a, t_list **stack_b)
 	pa(stack_a, stack_b);
 }
 
+/*simple_sort is the main function that determines the appropriate sorting 
+function to call based on the size of the input stack. */
 void	simple_sort(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
