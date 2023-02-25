@@ -22,15 +22,12 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			i;
-	int				diff;
 	unsigned char	*y;
 	unsigned char	*x;
 
 	x = (unsigned char *)s1;
 	y = (unsigned char *)s2;
-	i = 0;
-	diff = 0;
+	
 	if (n)
 		while (n--)
 			if (*x++ != *y++)

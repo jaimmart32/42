@@ -3,43 +3,37 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jaimmart <jaimmart@student.42.fr>          +#+  +:+       +#+         #
+#    By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/14 21:10:46 by jaimmart          #+#    #+#              #
-#    Updated: 2023/02/14 21:11:08 by jaimmart         ###   ########.fr        #
+#    Updated: 2023/02/25 14:45:34 by jaimmart32       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-CHECK = checker
 
-SRCS =  $(wildcard src/*.c utils/*.c)
-CHECK_SRCS = $(wildcard utils/*.c) src/instructions.c checker.c
+vpath %.c algos:commands:utils
+SRCS =  radix.c simple.c pushs.c rev_rotate.c rotate.c swaps.c checks.c \
+		error_and_free.c index.c list_utils.c stack_utils.c main.c
 
 OBJS = ${SRCS:.c=.o}
-CHECK_OBJS = ${CHECK_SRCS:.c=.o}
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -Iincludes
 
 RM = rm -rf
 
-all: ${NAME} ${CHECK}
+all: ${NAME}
 ${NAME}: ${OBJS}
 	@${MAKE} -C ./libft
 	@${CC} ${CFLAGS} ${OBJS} ./libft/libft.a -o ${NAME}
 
-${CHECK}: ${CHECK_OBJS} 
-	@${CC} ${CFLAGS} ${CHECK_OBJS} ./libft/libft.a -o ${CHECK}
-
 clean: 
 	@${MAKE} -C ./libft fclean
 	@${RM} ${OBJS}
-	@${RM} ${CHECK_OBJS}
 
 fclean: clean
 	@${RM} ${NAME}
-	@${RM} ${CHECK}
 
 re: fclean all
 

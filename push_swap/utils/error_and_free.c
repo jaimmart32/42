@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_and_free.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaimmart <jaimmart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:45:43 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/09 11:58:45 by jaimmart         ###   ########.fr       */
+/*   Updated: 2023/02/25 14:27:08 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	error(char *msg)
 {
 	ft_putendl_fd(msg, 2);
-	exit (0);
+	exit(0);
 }
 
 void	ft_free(char **str)

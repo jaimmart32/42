@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaimmart <jaimmart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:48:55 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/09 11:47:30 by jaimmart         ###   ########.fr       */
+/*   Updated: 2023/02/25 14:27:26 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,21 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
+#include <stdlib.h>
 
-// Stack
+// Node or Stack
 typedef struct s_list
 {
 	int				value;
 	int				index;
 	struct s_list	*next;
 }	t_list;
+
+//Algos
+void	radix_sort(t_list **stack_a, t_list **stack_b);
+void	simple_sort(t_list **stack_a, t_list **stack_b);
+void	sort_5(t_list **stack_a, t_list **stack_b);
+void	index_stack(t_list **stack);
 
 // Command functions
 int		swap(t_list **stack);
@@ -41,9 +48,15 @@ int		rra(t_list **stack_a);
 int		rrb(t_list **stack_b);
 int		rrr(t_list **stack_a, t_list **stack_b);
 
-//Utility functions
+//List functions
+int		ft_lstsize(t_list *head);
+t_list	*ft_lstnew(int value);
+void	ft_lstadd_front(t_list **stack, t_list *new);
+t_list	*ft_lstlast(t_list *head);
+void	ft_lstadd_back(t_list **stack, t_list *new);
+void	print_list(t_list *head);
 
-//list functions
+//Utility functions
 
 void	error(char *msg);
 void	check_args(int argc, char **argv);

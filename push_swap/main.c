@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaimmart <jaimmart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:11:00 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/14 21:11:04 by jaimmart         ###   ########.fr       */
+/*   Updated: 2023/02/25 14:27:54 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (-1);
-	ft_check_args(argc, argv);
+	check_args(argc, argv);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaimmart <jaimmart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:01:51 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/09 11:41:30 by jaimmart         ###   ########.fr       */
+/*   Updated: 2023/02/25 14:14:25 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	rb(t_list **stack_b)
 
 int	rr(t_list **stack_a, t_list **stack_b)
 {
-	if (ft_lstsize(stack_a) < 2 || ft_lstsize(stack_a) < 2)
+	if (ft_lstsize(*stack_a) < 2 || ft_lstsize(*stack_b) < 2)
 		return (-1);
 	rotate(stack_a);
 	rotate(stack_b);

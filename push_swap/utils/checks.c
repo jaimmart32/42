@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaimmart <jaimmart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:20:06 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/09 12:38:22 by jaimmart         ###   ########.fr       */
+/*   Updated: 2023/02/25 14:20:29 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_contains(int num, char **argv, int i)
 	i++;
 	while (argv[i])
 	{
-		if (ft_atoi(argv[i] == num))
+		if (ft_atoi(argv[i]) == num)
 			return (1);
 		i++;
 	}
@@ -40,7 +40,7 @@ static int	ft_isnum(char *num)
 	return (1);
 }
 
-void	ft_check_args(int argc, char **argv)
+void	check_args(int argc, char **argv)
 {
 	int		i;
 	long	tmp;
