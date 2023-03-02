@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:12:58 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/03/02 19:00:39 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/03/02 19:03:03 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ current maximum value) and then determines the number of bits needed to
 represent the maximum value in binary. This is accomplished by moving
 of bits(>>) to the right of the maximum value in a loop until the value
 resultant becomes zero, indicating that all the values ​​have been shifted.
-bits of the original value.
 
 The function returns the number of times
 that the shift was performed, which is equal to the number of bits needed
