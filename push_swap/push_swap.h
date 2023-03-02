@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:48:55 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/25 16:43:37 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/03/02 12:45:08 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void	error(char *msg);
 void	check_args(int argc, char **argv);
 int		is_sorted(t_list **stack);
 int		get_distance(t_list **stack, int index);
-void	make_top(t_list **stack, int distance);
 void	free_stack(t_list **stack);
 void	ft_free(char **str);
 #endif

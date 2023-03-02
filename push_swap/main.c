@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:11:00 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/25 16:42:18 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/03/01 16:25:34 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*Initialize the stack with the input arguments.*/
 static void	init_stack(t_list **stack, int argc, char **argv)
 {
-	t_list	*new;
+	t_list	*new_node;
 	char	**args;
 	int		i;
 
@@ -29,8 +29,8 @@ static void	init_stack(t_list **stack, int argc, char **argv)
 	}
 	while (args[i])
 	{
-		new = ft_lstnew(ft_atoi(args[i]));
-		ft_lstadd_back(stack, new);
+		new_node = ft_lstnew(ft_atoi(args[i]));
+		ft_lstadd_back(stack, new_node);
 		i++;
 	}
 	index_stack(stack);
