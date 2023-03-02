@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:12:58 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/25 16:00:27 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/03/02 19:00:39 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,11 @@ bit are moved to stack_b. This is done calling the functions ra() and pb()
 Once the entire stack_a has been traversed, the
 contents of stack_b back to stack_a in reverse order, using the
 pa() function. After all iterations of the
-loop, stack_a will contain the items sorted in ascending order.*/
+loop, stack_a will contain the items sorted in ascending order.
+
+& bitwise operand compares the last bit with 1, if it is 1 and 1the output
+will be 1 and the node will be rotated and remaining in stack_a, if its 0
+and 1, the output will be 0 and the node will be pushed to stack_b.*/
 void	radix_sort(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*head_a;
