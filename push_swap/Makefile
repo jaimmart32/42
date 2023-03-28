@@ -6,7 +6,7 @@
 #    By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/14 21:10:46 by jaimmart          #+#    #+#              #
-#    Updated: 2023/02/25 15:52:41 by jaimmart32       ###   ########.fr        #
+#    Updated: 2023/03/28 20:40:18 by jaimmart32       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS =  radix.c simple.c pushs.c rev_rotate.c rotate.c swaps.c checks.c \
 
 OBJS = ${SRCS:.c=.o}
 
-CC = gcc
+CC = gcc -g
 CFLAGS = -Wall -Wextra -Werror -Iincludes
 
 RM = rm -rf

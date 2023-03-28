@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 11:19:39 by jaimmart          #+#    #+#             */
-/*   Updated: 2023/02/25 14:09:49 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/03/06 16:12:43 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
-int		ft_atoi(const char *str);
+long		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 
 #endif

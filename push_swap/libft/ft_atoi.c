@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaimmart <jaimmart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 10:39:07 by jaimmart          #+#    #+#             */
-/*   Updated: 2022/10/04 14:07:56 by jaimmart         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:14:23 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int		i;
-	int		sign;
+	long		sign;
 	long	result;
 
 	result = 0;
@@ -34,10 +34,6 @@ int	ft_atoi(const char *str)
 	{
 		result *= 10;
 		result += (str[i] - '0');
-		if (result * sign > 2147483647)
-			return (-1);
-		if (result * sign < -2147483648)
-			return (0);
 		i++;
 	}
 	return (result * sign);
