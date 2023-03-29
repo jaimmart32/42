@@ -16,7 +16,7 @@ MAP = 	map_reader.c map_checker.c map_checker_utils.c \
 SRC_MAP = $(addprefix map/, $(MAP))
 
 GAME =	game_init.c open_panel.c end_program.c input.c render.c \
-		open_images.c
+		open_images.c player_movement.c player_final.c
 SRC_GAME = $(addprefix game/, $(GAME))
 
 OBJ = *.o

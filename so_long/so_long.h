@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 13:13:21 by jaimmart32        #+#    #+#             */
-/*   Updated: 2023/03/27 17:14:45 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/03/28 20:08:03 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ typedef struct s_color
 typedef struct s_player
 {
 	t_tile	*tile;
+	void	*img;
 }	t_player;
 
 /* All info for the game run */
@@ -86,6 +87,7 @@ typedef struct s_game
 	
 	t_vector		img_size;
 	
+	void			*player_imgs;
 	void			*door_open_img;
 	void			*door_close_img;
 	void			*wall_img;
@@ -97,10 +99,10 @@ typedef struct s_game
 
 enum e_keycode
 {
-	KEY_UP = 13,
-	KEY_DOWN = 1,
-	KEY_LEFT = 0,
-	KEY_RIGHT = 2,
+	KEY_UP = 119,
+	KEY_DOWN = 115,
+	KEY_LEFT = 97,
+	KEY_RIGHT = 100,
 	RESET = 15,
 	ESC = 65307
 };
@@ -108,9 +110,16 @@ enum e_keycode
 //Game Functions
 t_bool	start(t_game *game, int argc, char **argv);
 int		end_program(t_game *game);
-int		input(int key, t_game *game);
+int	input(int key, t_game *game);
+int	key_input(int keycode, void *param);
 void	render(t_game game);
 
+// Player
+void	move_to_empty(t_game *game, t_tile *tile);
+void	move_to_exit(t_game *game);
+void	pick_collect(t_game *game, t_tile *tile);
+void	remove_player(t_game *game);
+t_bool	move_to(t_game *game, t_tile *tile);
 //Window Panel
 t_color	new_color(int r, int g, int b, int a);
 void	color_panel(t_panel *panel, t_color color);

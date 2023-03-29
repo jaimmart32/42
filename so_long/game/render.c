@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:42:16 by jaimmart32        #+#    #+#             */
-/*   Updated: 2023/03/27 16:10:21 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/03/28 18:40:13 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ static void	draw_image(t_tile tile, t_game game, t_vector pos)
 	else if (tile.type == COLLECTABLE)
 		mlx_put_image_to_window(game.mlx, game.window,
 			game.collects_imgs, pos.x, pos.y);
+	else if (tile.type == PLAYER)
+		mlx_put_image_to_window(game.mlx, game.window,
+			game.player.img, pos.x, pos.y);
 }
 
 /* Puts the tile map on the window */
