@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 13:13:21 by jaimmart32        #+#    #+#             */
-/*   Updated: 2023/03/31 17:35:59 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/04/03 15:40:05 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,26 +43,6 @@ typedef struct s_tile
 	struct s_tile	*right;
 }	t_tile;
 
-/* An image that covers the whole window */
-typedef struct s_panel
-{
-	void		*pointer;
-	char		*pixels;
-	t_vector	size;
-	int			bpp;
-	int			line_size;
-	int			endian;
-}	t_panel;
-
-/* Color */
-typedef struct s_color
-{
-	int	r;
-	int	g;
-	int	b;
-	int	a;
-}	t_color;
-
 /* Info about the player */
 typedef struct s_player
 {
@@ -92,9 +72,6 @@ typedef struct s_game
 	void			*door_close_img;
 	void			*wall_img;
 	void			*collects_imgs;
-	
-	void			*red_panel;
-	void			*white_panel;
 }	t_game;
 
 enum e_keycode
@@ -121,9 +98,6 @@ void	pick_collect(t_game *game, t_tile *tile);
 void	remove_player(t_game *game);
 t_bool	move_to(t_game *game, t_tile *tile);
 //Window Panel
-t_color	new_color(int r, int g, int b, int a);
-void	color_panel(t_panel *panel, t_color color);
-void	*new_panel(t_game *game, t_color color);
 
 // Util Functions
 int	ft_strend_cmp(char *name, char *end);

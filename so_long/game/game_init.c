@@ -35,11 +35,9 @@ void	game_init(t_game *game)
 			"so_long");
 	mlx_hook(game->window, 17, 0, end_program, game);
 	open_images(game);
-	game->white_panel = new_panel(game, new_color(254, 254, 254, 0));
-	game->red_panel = new_panel(game, new_color(197, 4, 4, 0));
 }
 
-/* Initialize the <game> struct */
+/* Initialize the <game> struct, generate tilemap.*/
 t_bool	start(t_game *game, int argc, char **argv)
 {
 	game->collects = 0;

@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:11:46 by jaimmart32        #+#    #+#             */
-/*   Updated: 2023/04/03 12:54:31 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/04/03 15:36:03 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	move_to_exit(t_game *game)
 	printf("exit:\n");
 	render(*game);
 	sleep(1);
-	mlx_put_image_to_window(game->mlx, game->window, game->white_panel, 0, 0);
 	remove_player(game);
 	game->collects = -1;
 	mlx_loop_end(game->mlx);//testing mlx_functions that may not be necessary
