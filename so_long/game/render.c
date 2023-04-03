@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:42:16 by jaimmart32        #+#    #+#             */
-/*   Updated: 2023/03/28 18:40:13 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/03/31 17:42:22 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,10 @@ void	render(t_game game)
 	while (game.tilemap[y] != NULL)
 	{
 		x = 0;
-		while (game.tilemap[y][x].type != 0)
+		printf("\nfila actual: %d\n", y);
+		while (game.tilemap[y][x].type != 0)// 0 \0 o NULL? Valgrind se queja mucho
 		{
+			printf("%i: actual rendering tile_type: %c\n",x, (char)game.tilemap[y][x].type);
 			tile = game.tilemap[y][x];
 			draw_image(tile, game, tile.position);
 			x++;
@@ -56,3 +58,5 @@ void	render(t_game game)
 		y++;
 	}
 }
+
+//EN LA ESQUINA SUPERIOR IZQUIERDA HAY UNA TYLE QUE NO TIENE TIPO O NO SE ESTA RENDERIZANDO!!!

@@ -20,7 +20,7 @@ GAME =	game_init.c open_panel.c end_program.c input.c render.c \
 SRC_GAME = $(addprefix game/, $(GAME))
 
 OBJ = *.o
-
+CC = gcc -g
 FLAGS = -Wall -Wextra -Werror
 INCLUDE = -lmlx -lXext -lX11 -lm
 
@@ -36,12 +36,12 @@ $(NAME): $(OBJ)
 	@echo $(CURSIVE)$(GRAY) "     - Making libft..." $(NONE)
 	@make -C $(LIBF_DIR)
 	@echo $(CURSIVE)$(GRAY) "     - Compiling $(NAME)..." $(NONE)
-	@gcc $(FLAGS) $(OBJ) $(LIBFT) $(INCLUDE) -o $(NAME)
+	@$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(INCLUDE) -o $(NAME)
 	@echo $(GREEN)"- Compiled -"$(NONE)
 
 $(OBJ): $(SRC)
 	@echo $(CURSIVE)$(GRAY) "     - Making object files..." $(NONE)
-	@gcc $(FLAGS) -c $(SRC)
+	@$(CC) $(FLAGS) -c $(SRC)
 
 norm:
 	@echo $(GRAY) ""

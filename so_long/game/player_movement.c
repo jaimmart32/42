@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:11:46 by jaimmart32        #+#    #+#             */
-/*   Updated: 2023/03/29 13:55:08 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/04/03 12:54:31 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void	move_to_exit(t_game *game)
 	mlx_put_image_to_window(game->mlx, game->window, game->white_panel, 0, 0);
 	remove_player(game);
 	game->collects = -1;
-	mlx_loop_end(game->mlx);
+	mlx_loop_end(game->mlx);//testing mlx_functions that may not be necessary
+	end_program(game);// When I was trying to exit stairs memory of mlx pointers was not freed
 }

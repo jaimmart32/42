@@ -1,18 +1,25 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tables.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/31 15:49:16 by jaimmart32        #+#    #+#             */
+/*   Updated: 2023/03/31 15:53:51 by jaimmart32       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/* Returns the number of lines a 2D string table that ends in NULL
--> *chars*\0
--> *chars*\0
--> NULL 
-Retunr value: 2 */
+#include <stdlib.h>
+#include "libft.h"
 int	ft_chartable_linecount(char **table)
 {
-	int	count;
+	int	cont;
 
-	count = 0;
-	while (table[count])
-		count++;
-	return (count);
+	cont = 0;
+	while (table[cont])
+		cont++;
+	return (cont);
 }
 
 /* Frees a 2D table */

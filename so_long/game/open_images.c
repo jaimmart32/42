@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:58:19 by jaimmart32        #+#    #+#             */
-/*   Updated: 2023/03/28 18:41:26 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/03/31 17:36:21 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	open_player_imgs(t_game *game)
 
 static void open_wall_imgs(t_game *game)
 {
-    game->wall_img = mlx_xpm_file_to_image(game->mlx,
+game->wall_img = mlx_xpm_file_to_image(game->mlx,
 			"sprites/wall.xpm",
 			&game->img_size.x, &game->img_size.y);
 }

@@ -18,5 +18,13 @@ int	end_program(t_game *game)
 {
 	free_tilemap(game);
 	game->tilemap = NULL;
+	mlx_destroy_window(game->mlx,game->window);//destroy window?
+	// mlx_destroy_image(game->mlx, game->player.img);
+	// mlx_destroy_image(game->mlx, game->wall_img);
+	// mlx_destroy_image(game->mlx, game->collects_imgs);
+	// mlx_destroy_image(game->mlx, game->door_open_img);
+	// mlx_destroy_image(game->mlx, game->door_close_img);
+	mlx_destroy_display(game->mlx);//destroy mlx?
+	//free(game);//free game struct? its in the stack, not on the heap so i supose no..;()
 	exit(0);
 }
