@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 13:13:21 by jaimmart32        #+#    #+#             */
-/*   Updated: 2023/04/03 15:40:05 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/04/05 14:10:47 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef enum e_tiletype
 	COLLECTABLE = 'C',
 	PLAYER = 'P',
 	EXIT = 'E',
+	FLOOD = 'F'
 }	t_tiletype;
 
 /* Struct for each tile */
@@ -60,6 +61,8 @@ typedef struct s_game
 	void			*window;
 	t_vector		wndw_size;
 	t_tile			**tilemap;
+	t_tile			**f_tilemap;
+	t_tile			*flood_ptr;
 	t_player		player;
 	int				og_collects;
 	int				collects;
@@ -87,6 +90,7 @@ enum e_keycode
 //Game Functions
 t_bool	start(t_game *game, int argc, char **argv);
 int		end_program(t_game *game);
+void	free_tilemaps(t_game *game);
 int	input(int key, t_game *game);
 int	key_input(int keycode, void *param);
 void	render(t_game game);

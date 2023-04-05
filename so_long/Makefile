@@ -12,7 +12,7 @@ GNL = get_next_line.c get_next_line_utils.c
 SRC_GNL = $(addprefix gnl/, $(GNL))
 
 MAP = 	map_reader.c map_checker.c map_checker_utils.c \
-		tilemap_generator.c
+		tilemap_generator.c flood.c
 SRC_MAP = $(addprefix map/, $(MAP))
 
 GAME =	game_init.c end_program.c input.c render.c \

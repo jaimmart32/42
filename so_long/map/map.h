@@ -17,7 +17,11 @@ typedef struct s_mapcheckerdata
 	t_bool		b_collect;
 }				t_mapcheckerdata;
 
+t_tile **alloc_tilemap(char **map);
 t_tile	**generate_tilemap(char **map, t_game *game);
+int		flood_init(t_game *game, char **f_map);
+t_tiletype	define_tiletype(char definer);
+void	setup_tile(t_tile **tilemap, int x, int y);
 
 int	valid_border(char c, t_vector point, t_vector size);
 int	valid_uniquechar(char c, char checker, t_bool *bool);

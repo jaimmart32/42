@@ -7,7 +7,9 @@ t_tile	**map_init(int argc, char **argv, t_game *game)
 {
 	char	**map;
 	t_tile	**tilemap;
+	int		f_flag;
 
+	f_flag = 0;
 	if (!valid_file(argc, argv[1]))
 		return (NULL);
 	map = read_map (argv[1]);
@@ -19,9 +21,16 @@ t_tile	**map_init(int argc, char **argv, t_game *game)
 		return (NULL);
 	}
 	tilemap = generate_tilemap(map, game);
+	f_flag = flood_init(game, map);
 	ft_free_chartable(map);
 	if (!tilemap)
 		return (NULL);
+	if (f_flag == 0)
+	{
+		game->tilemap = tilemap;
+		free_tilemaps(game);
+		return (NULL);
+	}
 	return (tilemap);
 }
 
