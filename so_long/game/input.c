@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 14:38:29 by jaimmart32        #+#    #+#             */
-/*   Updated: 2023/03/29 13:32:12 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/04/11 14:35:01 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 void	move_to_empty(t_game *game, t_tile *tile);
 void	move_to_exit(t_game *game);
 void	pick_collect(t_game *game, t_tile *tile);
+void	move_to_noexit(t_game *game, t_tile *tile);
 
 /* Move the player to <tile> doing whats needed based on its type */
 t_bool	move_to(t_game *game, t_tile *tile)
@@ -26,6 +27,8 @@ t_bool	move_to(t_game *game, t_tile *tile)
 		pick_collect(game, tile);
 	else if (tile->type == EXIT && game->collects <= 0)
 		move_to_exit(game);
+	else if (tile->type == EXIT && game->collects > 0)
+		move_to_noexit(game, tile);
 	else
 		return (FALSE);
 	return (TRUE);

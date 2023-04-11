@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 13:13:21 by jaimmart32        #+#    #+#             */
-/*   Updated: 2023/04/05 14:10:47 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/04/11 14:34:06 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ void	render(t_game game);
 
 // Player
 void	move_to_empty(t_game *game, t_tile *tile);
+void	move_to_noexit(t_game *game, t_tile *tile);
 void	move_to_exit(t_game *game);
 void	pick_collect(t_game *game, t_tile *tile);
 void	remove_player(t_game *game);

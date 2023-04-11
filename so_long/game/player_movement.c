@@ -6,7 +6,7 @@
 /*   By: jaimmart32 <jaimmart32@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:11:46 by jaimmart32        #+#    #+#             */
-/*   Updated: 2023/04/03 15:45:59 by jaimmart32       ###   ########.fr       */
+/*   Updated: 2023/04/11 14:59:02 by jaimmart32       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,22 @@ void	move_to_empty(t_game *game, t_tile *tile)
     printf("%c\n", tile->type);
 	if (game->player.tile->type != EXIT)
 		game->player.tile->type = EMPTY;
+	else if (game->player.tile->type == EXIT)
+		game->player.tile->type = EXIT;
 	game->player.tile = tile;
+	render(*game);
+}
+
+void	move_to_noexit(t_game *game, t_tile *tile)
+{
+    printf("move to no exit: %c\n", tile->type);
+	tile->type = PLAYER;
+	if (game->player.tile->type != EXIT)
+		game->player.tile->type = EMPTY;
+	
+    printf("%c\n", tile->type);
+	game->player.tile = tile;
+	tile->type = EXIT;
 	render(*game);
 }
 
